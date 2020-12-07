@@ -8,9 +8,13 @@ import java.awt.event.MouseEvent;
 import java.util.*;
 import java.util.List;
 
+import javax.swing.ImageIcon;
+import javax.swing.JLabel;
+
 public class DrawUtils {
     private Graphics2D g;
     private static int radius = 20;
+    Image img;
 
     public DrawUtils(Graphics2D graphics2D){
         g = graphics2D;
@@ -169,6 +173,12 @@ public class DrawUtils {
         g.drawString(text, (int) (x - t_width / 2), (y + fm.getMaxAscent() / 2));
     }
 
+    public void drawBackground() {
+        System.out.println("here");
+        ImageIcon i = new ImageIcon("C:/Users/bucks/OneDrive/Documents/GitHub/dijkstra-gui/src/resources/vector-simple-flat-road-map.jpg");
+        img = i.getImage();
+        g.drawImage(img, 0,0, null);
+    }
 
     // Calculations
     private static int sqr(int x) {
